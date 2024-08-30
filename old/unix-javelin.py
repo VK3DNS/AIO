@@ -27,11 +27,16 @@ N = int(input_file.readline().strip())
 input_line = input_file.readline().strip()
 D = list(map(int, input_line.split()))
 
-# TODO: This is where you should compute your solution. Store the number of
-# current leaders that there were during the competition into the variable
-# answer.
+lastBest = 0
+numBest = 0
+for integer in D:
+    if integer > lastBest:
+        lastBest = integer
+        numBest += 1
 
-answer = 0
+
+answer = numBest
+print(answer)
 
 # Write the answer to the output file.
 output_file.write("%d\n" % (answer))
